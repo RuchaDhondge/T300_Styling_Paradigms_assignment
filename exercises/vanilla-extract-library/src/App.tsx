@@ -1,8 +1,9 @@
 import * as styles from './appStyles.css'
+import { themeClass } from './theme/theme.css'
 
 function App() {
   return (
-    <main className={styles.page}>
+    <main className={`${themeClass} ${styles.page}`}>
       <section className={styles.panel}>
         <p className={styles.eyebrow}>Exercise 2</p>
         <h1 className={styles.title}>Type-safe component library</h1>

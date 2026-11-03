@@ -1,4 +1,5 @@
 import { globalStyle, style } from '@vanilla-extract/css'
+import { breakpoints, vars } from './theme/theme.css'
 
 globalStyle('*', {
   boxSizing: 'border-box',
@@ -8,44 +9,50 @@ globalStyle('body', {
   margin: 0,
   minWidth: 320,
   minHeight: '100vh',
-  background: '#f8fafc',
-  color: '#0f172a',
-  fontFamily:
-    'Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
 })
 
 export const page = style({
   minHeight: '100vh',
-  padding: 24,
+  padding: vars.space.lg,
+  background: vars.color.canvas,
+  color: vars.color.text,
+  fontFamily: vars.font.body,
+  fontSize: vars.font.sizeBody,
+  '@media': {
+    [breakpoints.tablet]: {
+      padding: vars.space['2xl'],
+    },
+  },
 })
 
 export const panel = style({
   maxWidth: 1120,
   margin: '0 auto',
-  padding: 24,
-  border: '1px solid #e2e8f0',
-  borderRadius: 12,
-  background: '#ffffff',
-  boxShadow: '0 1px 3px rgb(15 23 42 / 0.1)',
+  padding: vars.space.xl,
+  border: `1px solid ${vars.color.border}`,
+  borderRadius: vars.radius.large,
+  background: vars.color.surface,
+  boxShadow: vars.shadow.card,
 })
 
 export const eyebrow = style({
   margin: 0,
-  color: '#4f46e5',
-  fontSize: 14,
-  fontWeight: 700,
+  color: vars.color.primary,
+  fontSize: vars.font.sizeSmall,
+  fontWeight: vars.font.weightBold,
   letterSpacing: '0.08em',
   textTransform: 'uppercase',
 })
 
 export const title = style({
-  margin: '8px 0 0',
-  fontSize: 32,
+  margin: `${vars.space.sm} 0 0`,
+  fontSize: vars.font.sizeTitle,
+  fontWeight: vars.font.weightBold,
   lineHeight: 1.2,
 })
 
 export const description = style({
-  margin: '8px 0 0',
-  color: '#64748b',
+  margin: `${vars.space.sm} 0 0`,
+  color: vars.color.textMuted,
   lineHeight: 1.6,
 })
