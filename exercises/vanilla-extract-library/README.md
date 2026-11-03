@@ -1,32 +1,29 @@
-# React + TypeScript + Vite
+# Type-Safe Component Library
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Exercise 2 demonstrates typed styles, shared design tokens, reusable variants,
+style composition, and static CSS generation with Vanilla Extract.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Verify build-time CSS
+
+```bash
+npm run build
+ls -lh dist/assets/*.css
+npm run lint
+```
+
+The component library includes:
+
+- `Button`: primary, secondary, and danger variants; small and large sizes.
+- `Card`: consistent spacing, radius, background, border, and shadow.
+- `Badge`: success, warning, and error variants.
+
+Shared tokens are defined in
+[`src/theme/theme.css.ts`](./src/theme/theme.css.ts). Component styles are kept
+in colocated `.css.ts` files and compiled into static CSS by Vite.

@@ -1,32 +1,26 @@
-# React + TypeScript + Vite
+# Responsive Product Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Exercise 1 demonstrates Tailwind CSS's utility-first composition, responsive
+variants, state variants, and theme variables in a React product dashboard.
 
-Currently, two official plugins are available:
+## Run locally
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+```bash
+npm install
+npm run dev
 ```
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Verify
+
+```bash
+npm run build
+npm run lint
+```
+
+Resize the browser to verify one column below `768px`, two columns from `768px`,
+and three columns from `1024px`. Test button hover, keyboard focus, and the
+disabled out-of-stock action.
+
+Theme values are defined in [`src/index.css`](./src/index.css). Product data and
+reusable UI components are separated under `src/data`, `src/types`, and
+`src/components`.
