@@ -56,3 +56,27 @@ export const description = style({
   color: vars.color.textMuted,
   lineHeight: 1.6,
 })
+
+export const section = style({
+  marginTop: vars.space['2xl'],
+})
+
+export const sectionTitle = style({
+  margin: 0,
+  fontSize: '20px',
+  fontWeight: vars.font.weightBold,
+})
+
+export const sectionDescription = style({
+  margin: `${vars.space.xs} 0 0`,
+  color: vars.color.textMuted,
+  fontSize: vars.font.sizeSmall,
+})
+
+export const componentRow = style({
+  display: 'flex',
+  flexWrap: 'wrap',
+  alignItems: 'center',
+  gap: vars.space.md,
+  marginTop: vars.space.lg,
+})
