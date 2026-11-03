@@ -80,3 +80,44 @@ export const componentRow = style({
   gap: vars.space.md,
   marginTop: vars.space.lg,
 })
+
+export const componentGrid = style({
+  display: 'grid',
+  gridTemplateColumns: '1fr',
+  gap: vars.space.lg,
+  marginTop: vars.space.lg,
+  '@media': {
+    [breakpoints.tablet]: {
+      gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+    },
+    [breakpoints.desktop]: {
+      gridTemplateColumns: 'repeat(3, minmax(0, 1fr))',
+    },
+  },
+})
+
+export const cardHeader = style({
+  display: 'flex',
+  alignItems: 'flex-start',
+  justifyContent: 'space-between',
+  gap: vars.space.md,
+})
+
+export const cardTitle = style({
+  margin: 0,
+  fontSize: '18px',
+  fontWeight: vars.font.weightBold,
+})
+
+export const cardBody = style({
+  margin: 0,
+  color: vars.color.textMuted,
+  fontSize: vars.font.sizeSmall,
+  lineHeight: 1.6,
+})
+
+export const cardFooter = style({
+  display: 'flex',
+  gap: vars.space.sm,
+  marginTop: 'auto',
+})
